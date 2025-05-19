@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wi-Fi Camera Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f3f3f3;
+      padding: 20px;
+    }
+    #videoFeed {
+      width: 100%;
+      max-width: 600px;
+      border: 2px solid #000;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Wi-Fi Camera Viewer</h1>
+
+  <input type="text" id="cameraUrl" placeholder="http://192.168.X.X:port/video" size="40" />
+  <button onclick="startStream()">Connect</button>
+
+  <div>
+    <img id="videoFeed" src="" alt="Camera Feed" />
+  </div>
+
+</body>
+
+<script>
+  function startStream() {
+    const url = document.getElementById("cameraUrl").value;
+    const video = document.getElementById("videoFeed");
+    video.src = url;
+  }
+</script>
+
+</html>
